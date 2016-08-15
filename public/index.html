@@ -32,6 +32,10 @@
     <md-button class="md-raised md-primary" ng-click="app.submit()">Submit</md-button>
     <md-button class="md-raised md-primary" ng-click="app.getData()">getData</md-button>
     
+    <ul>
+        <li ng-repeat="i in  app.dataDb"> Title: {{i.title}} <br/> Content: {{i.content}} <br/> Author: {{i.author}} <br/> id: {{i.id}}</li>
+    </ul>
+
 </div>
 
 </body>
