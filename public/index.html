@@ -29,11 +29,20 @@
         <label>author</label>
         <input ng-model="app.user.author">
     </md-input-container>
+
+    <md-input-container>
+        <label>Id</label>
+        <input ng-model="app.UpdateUser.id" id="id">
+    </md-input-container>
+
     <md-button class="md-raised md-primary" ng-click="app.submit()">Submit</md-button>
     <md-button class="md-raised md-primary" ng-click="app.getData()">getData</md-button>
+    <md-button class="md-raised md-primary" ng-click="app.updateUser()">update data</md-button>
+    <md-button class="md-raised md-primary" ng-click="app.deleteUser()">delete data</md-button>
+
     
     <ul>
-        <li ng-repeat="i in  app.dataDb"> Title: {{i.title}} <br/> Content: {{i.content}} <br/> Author: {{i.author}} <br/> id: {{i.id}}</li>
+        <li ng-repeat="i in  app.dataDb"> Title: {{i.title}} <br/> Content: {{i.content}} <br/> Author: {{i.author}} <br/> id: {{i._id}}</li>
     </ul>
 
 </div>
