@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+
+    <link rel="stylesheet" type="text/css" href="./bower_components/angular-material/angular-material.css"/>
+
+    <script src="./bower_components/angular/angular.js"></script>
+    <script src="./bower_components/angular-animate/angular-animate.js"></script>
+    <script src="./bower_components/angular-aria/angular-aria.js"></script>
+    <script src="./bower_components/angular-material/angular-material.js"></script>
+    <script src="app.js"></script>
+</head>
+<body ng-app="myApp">
+
+<div ng-controller="myController as app" layout="column" layout-align="center center">
+    <md-input-container>
+        <label>title</label>
+        <input ng-model="app.user.title">
+    </md-input-container>
+
+    <md-input-container>
+        <label>content</label>
+        <input ng-model="app.user.content">
+    </md-input-container>
+
+    <md-input-container>
+        <label>author</label>
+        <input ng-model="app.user.author">
+    </md-input-container>
+    <md-button class="md-raised md-primary" ng-click="app.submit()">Submit</md-button>
+    <md-button class="md-raised md-primary" ng-click="app.getData()">getData</md-button>
+    
+</div>
+
+</body>
+</html>
