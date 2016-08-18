@@ -24,7 +24,6 @@
         };
 
         this.deleteUser = function () {
-            
             $http.post("/deleteData", _self.UpdateUser).then(_self.getData(), _self.UpdateUser = "");
         };
     }
