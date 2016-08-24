@@ -11,10 +11,10 @@ router.post("/insert", function (req, res) {
         author: req.body.author
     })
 
-        .save(function (err, doc) {
-            if (err) res.json(err);
-            else res.send('insert-data');
-        })
+    .save(function (err, doc) {
+        if (err) res.json(err);
+        else res.send('insert-data');
+    })
 });
 
 
@@ -38,6 +38,7 @@ router.post("/deleteData", function (req, res) {
 
     var id = req.body.id;
     insertData.findByIdAndRemove(id).exec();
+
 });
 
 

@@ -5,6 +5,7 @@
     <title>Title</title>
 
     <link rel="stylesheet" type="text/css" href="./bower_components/angular-material/angular-material.css"/>
+    <link rel="stylesheet" type="text/css" href="./style.css"/>
 
     <script src="./bower_components/angular/angular.js"></script>
     <script src="./bower_components/angular-animate/angular-animate.js"></script>
@@ -14,39 +15,87 @@
 </head>
 <body ng-app="myApp">
 
-<div ng-controller="myController as app" layout="column" layout-align="center center">
+<div ng-controller="myController as app" layout="row">
 
-    <md-input-container>
-        <label>title</label>
-        <input ng-model="app.user.title">
-    </md-input-container>
 
-    <md-input-container>
-        <label>content</label>
-        <input ng-model="app.user.content">
-    </md-input-container>
+    <div flex="50">
+        <div layout="column" layout-align="center center">
 
-    <md-input-container>
-        <label>author</label>
-        <input ng-model="app.user.author">
-    </md-input-container>
+            <h1>Create New Node</h1>
+            <md-input-container>
+                <label>title</label>
+                <input ng-model="app.user.title">
+            </md-input-container>
 
-    <md-input-container>
-        <label>Id</label>
-        <input ng-model="app.UpdateUser.id" id="id">
-    </md-input-container>
+            <md-input-container>
+                <label>content</label>
+                <input ng-model="app.user.content">
+            </md-input-container>
 
-    <md-button class="md-raised md-primary" ng-click="app.submit()">Submit</md-button>
-    <md-button class="md-raised md-primary" ng-click="app.getData()">getData</md-button>
-    <md-button class="md-raised md-primary" ng-click="app.updateUser()">update data</md-button>
-    <md-button class="md-raised md-primary" ng-click="app.deleteUser()">delete data</md-button>
+            <md-input-container>
+                <label>author</label>
+                <input ng-model="app.user.author">
+            </md-input-container>
+            <md-button class="md-raised md-primary" ng-click="app.submit()">Creat New</md-button>
 
-    
-    <ul>
-        <li ng-repeat="i in  app.dataDb"> Title: {{i.title}} <br/> Content: {{i.content}} <br/> Author: {{i.author}} <br/> id: {{i._id}}</li>
-    </ul>
+            <h1>Delete Node</h1>
+            <md-input-container>
+                <label>Id</label>
+                <input ng-model="app.UpdateUser.id" id="id">
+            </md-input-container>
+            <md-button class="md-raised md-primary" ng-click="app.deleteUser()">Delete Node</md-button>
 
-</div>
+            <h1>Update Node</h1>
+
+            <md-input-container>
+                <label>title</label>
+                <input ng-model="app.user.title">
+            </md-input-container>
+
+            <md-input-container>
+                <label>content</label>
+                <input ng-model="app.user.content">
+            </md-input-container>
+
+            <md-input-container>
+                <label>author</label>
+                <input ng-model="app.user.author">
+            </md-input-container>
+
+            <md-input-container>
+                <label>Id</label>
+                <input ng-model="app.UpdateUser.id" id="id">
+            </md-input-container>
+
+            <md-button class="md-raised md-primary" ng-click="app.updateUser()">update data</md-button>
+
+            <h1>Get Nodes</h1>
+            <md-button class="md-raised md-primary" ng-click="app.getData()">getData</md-button>
+
+
+        </div>
+
+    </div>
+
+    <div flex="50">
+
+        <div layout="column" layout-align="center center">
+            <div ng-repeat="i in  app.dataDb">
+                <div flex>
+                    <div class="demo-swipe">
+                        <span class="no-select">Title: {{i.title}}</span><br/>
+                        <span class="no-select">Content: {{i.content}}</span><br/>
+                        <span class="no-select">Author: {{i.author}}</span><br/>
+                        <span class="no-select">Id: {{i._id}}</span>
+
+                    </div>
+                    <md-divider></md-divider>
+
+                </div>
+            </div>
+        </div>
+
+    </div>
 
 </body>
 </html>
